@@ -1,313 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Film Review Stages – Guided Discovery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b1b3b;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background: #142850;
-      border-bottom: 2px solid #f9c74f;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 0.95rem;
-      color: #e0e0e0;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px 30px;
-    }
-    .instructions {
-      background: #1b2a4a;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #f9c74f;
-    }
-    .instructions h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-    .stage-list {
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-    .stage-list span {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 5px;
-      background: #142850;
-      padding: 5px 8px;
-      border-radius: 4px;
-      border: 1px solid #f9c74f;
-    }
-    .card {
-      background: #1b2a4a;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 15px;
-      border: 1px solid #304b8b;
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.05rem;
-      color: #f9c74f;
-    }
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    .select-row {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-    }
-    select {
-      padding: 4px 6px;
-      border-radius: 4px;
-      border: 1px solid #f9c74f;
-      background: #0b1b3b;
-      color: #f5f5f5;
-    }
-    .feedback {
-      font-size: 0.9rem;
-      margin-top: 5px;
-    }
-    .correct {
-      color: #90be6d;
-    }
-    .incorrect {
-      color: #f94144;
-    }
-    .buttons {
-      text-align: center;
-      margin-top: 20px;
-    }
-    button {
-      padding: 8px 16px;
-      margin: 0 5px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-    .check-btn {
-      background: #f9c74f;
-      color: #142850;
-      font-weight: bold;
-    }
-    .reset-btn {
-      background: #577590;
-      color: #f5f5f5;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #cccccc;
-      padding-bottom: 15px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Film Review Stages – Guided Discovery</h1>
-    <p>Match each paragraph to the correct stage of a film review.</p>
-  </header>
-
-  <main>
-    <section class="instructions">
-      <h2>Instructions</h2>
-      <p>Read each paragraph from the review of <strong>"The Silent Runner"</strong>. Then choose the correct review stage from the dropdown menu.</p>
-      <div class="stage-list">
-        <span>A – Title, director, and genre</span>
-        <span>B – Brief plot summary</span>
-        <span>C – Opinion and evaluation</span>
-        <span>D – Strengths and weaknesses</span>
-        <span>E – Final recommendation</span>
-        <span>F – Star rating</span>
-      </div>
-    </section>
-
-    <!-- Paragraph A -->
-    <div class="card" data-answer="A">
-      <h3>Paragraph A</h3>
-      <p>
-        “The Silent Runner” is a quiet drama directed by a new Norwegian filmmaker. This film is about Erik, a retired long-distance runner who returns to his childhood village after many years away.
-      </p>
-      <div class="select-row">
-        <label for="paraA">Choose stage:</label>
-        <select id="paraA">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackA"></div>
-    </div>
-
-    <!-- Paragraph B -->
-    <div class="card" data-answer="B">
-      <h3>Paragraph B</h3>
-      <p>
-        The story follows Erik as he reconnects with his mother, his sister, and a young neighbor. There are no big twists or action scenes — the film focuses on family problems, old memories, and slow emotional change.
-      </p>
-      <div class="select-row">
-        <label for="paraB">Choose stage:</label>
-        <select id="paraB">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackB"></div>
-    </div>
-
-    <!-- Paragraph C -->
-    <div class="card" data-answer="C">
-      <h3>Paragraph C</h3>
-      <p>
-        I think the cinematography is excellent, and the snowy mountains and frozen lakes help show Erik’s feelings. The simple, calm music also supports the emotional tone of the film.
-      </p>
-      <div class="select-row">
-        <label for="paraC">Choose stage:</label>
-        <select id="paraC">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackC"></div>
-    </div>
-
-    <!-- Paragraph D -->
-    <div class="card" data-answer="D">
-      <h3>Paragraph D</h3>
-      <p>
-        The acting is strong, especially in the scenes between Erik and his sister. However, some moments feel a little slow, and viewers who prefer fast stories might lose interest.
-      </p>
-      <div class="select-row">
-        <label for="paraD">Choose stage:</label>
-        <select id="paraD">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackD"></div>
-    </div>
-
-    <!-- Paragraph E -->
-    <div class="card" data-answer="E">
-      <h3>Paragraph E</h3>
-      <p>
-        I would recommend this film to anyone who enjoys quiet, emotional stories and beautiful natural scenery. It is a gentle film that stays in your mind after you finish watching it.
-      </p>
-      <div class="select-row">
-        <label for="paraE">Choose stage:</label>
-        <select id="paraE">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackE"></div>
-    </div>
-
-    <!-- Paragraph F -->
-    <div class="card" data-answer="F">
-      <h3>Paragraph F</h3>
-      <p>★★★★☆</p>
-      <div class="select-row">
-        <label for="paraF">Choose stage:</label>
-        <select id="paraF">
-          <option value="">-- Select --</option>
-          <option value="A">A – Title, director, and genre</option>
-          <option value="B">B – Brief plot summary</option>
-          <option value="C">C – Opinion and evaluation</option>
-          <option value="D">D – Strengths and weaknesses</option>
-          <option value="E">E – Final recommendation</option>
-          <option value="F">F – Star rating</option>
-        </select>
-      </div>
-      <div class="feedback" id="feedbackF"></div>
-    </div>
-
-    <div class="buttons">
-      <button class="check-btn" onclick="checkAnswers()">Check Answers</button>
-      <button class="reset-btn" onclick="resetExercise()">Reset</button>
-    </div>
-  </main>
-
-  <footer>
-    Film Review Stages – Upper Intermediate | Created for online practice
-  </footer>
-
-  <script>
-    function checkAnswers() {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const correct = card.getAttribute('data-answer');
-        const select = card.querySelector('select');
-        const feedback = card.querySelector('.feedback');
-        if (!select.value) {
-          feedback.textContent = 'Please choose a stage.';
-          feedback.className = 'feedback incorrect';
-        } else if (select.value === correct) {
-          feedback.textContent = 'Correct!';
-          feedback.className = 'feedback correct';
-        } else {
-          feedback.textContent = 'Not quite. Try again.';
-          feedback.className = 'feedback incorrect';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP8 Film Review – Paragraph Matching Exercise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              page: {
+                bg: '#f5f7fa',
+                card: '#ffffff',
+                accent: '#d4820a',
+                accentHover: '#b8700a',
+                text: '#1a1a2e',
+                muted: '#6b7280',
+                border: '#e2e8f0',
+                success: '#16a34a',
+                error: '#dc2626',
+                warning: '#d97706',
+              }
+            },
+            fontFamily: {
+              sans: ['Calibri', 'system-ui', 'sans-serif'],
+            }
+          }
         }
-      });
-    }
+      };
+    </script>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        background-color: #f5f7fa;
+        color: #1a1a2e;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .stage-row {
+        border-left: 4px solid #e2e8f0;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+      }
+      .stage-row.correct {
+        border-left-color: #16a34a;
+        background-color: rgba(22, 163, 74, 0.04);
+      }
+      .stage-row.incorrect {
+        border-left-color: #dc2626;
+        background-color: rgba(220, 38, 38, 0.04);
+      }
+      .stage-row.partial {
+        border-left-color: #d97706;
+        background-color: rgba(217, 119, 6, 0.04);
+      }
+      .custom-select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2.5rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .custom-select:focus {
+        outline: none;
+        border-color: #d4820a;
+        box-shadow: 0 0 0 3px rgba(212, 130, 10, 0.2);
+      }
+      .custom-select:disabled {
+        background-color: #f1f5f9;
+        color: #94a3b8;
+        cursor: not-allowed;
+      }
+      .letter-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        background: rgba(212, 130, 10, 0.12);
+        color: #d4820a;
+        font-weight: 700;
+        font-size: 0.875rem;
+        flex-shrink: 0;
+      }
+      .hint-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+      }
+      .hint-content.open {
+        max-height: 500px;
+        padding-top: 0.75rem;
+      }
+      .score-banner {
+        text-align: center;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        margin-top: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      .feedback-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.15rem 0.5rem;
+        border-radius: 9999px;
+      }
+      .para-item {
+        transition: background-color 0.15s ease;
+      }
+      .para-item:hover {
+        background-color: #f8fafc;
+      }
+    </style>
+  </head>
+  <body class="font-sans">
 
-    function resetExercise() {
-      const selects = document.querySelectorAll('select');
-      const feedbacks = document.querySelectorAll('.feedback');
-      selects.forEach(s => s.value = '');
-      feedbacks.forEach(f => {
-        f.textContent = '';
-        f.className = 'feedback';
+    <!-- Header -->
+    <header class="w-full bg-white border-b border-page-border">
+      <div class="max-w-4xl mx-auto px-4 md:px-8 py-6 text-center">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <span class="text-2xl">🎬</span>
+          <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-page-text leading-tight">
+            TP8: Film Review – Paragraph Matching
+          </h1>
+        </div>
+        <p class="text-page-muted text-sm md:text-base max-w-2xl mx-auto">
+          Read each paragraph. Then use the dropdowns to match each one to the correct stage of the review.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-4 md:px-8 py-8">
+
+      <!-- Section 1: Paragraphs -->
+      <section class="mb-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-page-border overflow-hidden">
+          <div class="px-5 md:px-6 py-4 border-b border-page-border">
+            <h2 class="text-lg md:text-xl font-bold text-page-text flex items-center gap-2">
+              <span class="text-xl">📄</span> The Paragraphs
+            </h2>
+          </div>
+          <div class="divide-y divide-page-border">
+
+            <!-- D -->
+            <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
+              <span class="letter-badge mt-0.5">D</span>
+              <p class="text-page-text text-sm md:text-base leading-relaxed">
+                The acting is strong, especially in the scenes between Erik and his sister. However, some moments feel a little slow, and viewers who prefer fast stories might lose interest.
+              </p>
+            </div>
+
+            <!-- A -->
+            <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
+              <span class="letter-badge mt-0.5">A</span>
+              <p class="text-page-text text-sm md:text-base leading-relaxed">
+                "The Silent Runner" is a quiet drama directed by a new Norwegian filmmaker. This film is about Erik, a retired long-distance runner who returns to his childhood village after many years away.
+              </p>
+            </div>
+
+            <!-- E -->
+            <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
+              <span class="letter-badge mt-0.5">E</span>
+              <p class="text-page-text text-sm md:text-base leading-relaxed">
+                I would recommend this film to anyone who enjoys quiet, emotional stories and beautiful natural scenery. It is a gentle film that stays in your mind after you finish watching it.
+              </p>
+            </div>
+
+            <!-- B -->
+            <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
+              <span class="letter-badge mt-0.5">B</span>
+              <p class="text-page-text text-sm md:text-base leading-relaxed">
+                The story follows Erik as he reconnects with his mother, his sister, and a young neighbor. There are no big twists or action scenes — the film focuses on family problems, old memories, and slow emotional change.
+              </p>
+            </div>
+
+            <!-- C -->
+            <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
+              <span class="letter-badge mt-0.5">C</span>
+              <p class="text-page-text text-sm md:text-base leading-relaxed">
+                I think the cinematography is excellent, and the snowy mountains and frozen lakes help show Erik's feelings. The simple, calm music also supports the emotional tone of the film.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Match the Stages -->
+      <section class="mb-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-page-border overflow-hidden">
+          <div class="px-5 md:px-6 py-4 border-b border-page-border">
+            <h2 class="text-lg md:text-xl font-bold text-page-text flex items-center gap-2">
+              <span class="text-xl">🗂️</span> Match Each Stage
+            </h2>
+          </div>
+          <div class="divide-y divide-page-border">
+
+            <!-- 1. Introduction -->
+            <div id="row-introduction" class="stage-row px-5 md:px-6 py-5">
+              <div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline gap-2 mb-1">
+                    <span class="text-page-accent font-bold text-sm">1.</span>
+                    <h3 class="text-page-accent font-bold text-base">Introduction</h3>
+                    <span id="feedback-introduction" class="feedback-badge hidden"></span>
+                  </div>
+                  <p class="text-page-muted text-xs md:text-sm ml-5">Names the film, director and main character</p>
+                </div>
+                <div class="ml-5 md:ml-0 w-full md:w-48 flex-shrink-0">
+                  <select id="select-introduction" class="custom-select w-full border border-page-border rounded-lg px-3 py-2.5 text-sm text-page-text bg-white min-h-[44px]">
+                    <option value="">-- Select --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Plot Summary -->
+            <div id="row-plot" class="stage-row px-5 md:px-6 py-5">
+              <div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline gap-2 mb-1">
+                    <span class="text-page-accent font-bold text-sm">2.</span>
+                    <h3 class="text-page-accent font-bold text-base">Plot Summary</h3>
+                    <span id="feedback-plot" class="feedback-badge hidden"></span>
+                  </div>
+                  <p class="text-page-muted text-xs md:text-sm ml-5">Describes what happens without spoilers</p>
+                </div>
+                <div class="ml-5 md:ml-0 w-full md:w-48 flex-shrink-0">
+                  <select id="select-plot" class="custom-select w-full border border-page-border rounded-lg px-3 py-2.5 text-sm text-page-text bg-white min-h-[44px]">
+                    <option value="">-- Select --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Evaluation (two dropdowns) -->
+            <div id="row-evaluation" class="stage-row px-5 md:px-6 py-5">
+              <div class="flex flex-col gap-3">
+                <div>
+                  <div class="flex items-baseline gap-2 mb-1">
+                    <span class="text-page-accent font-bold text-sm">3.</span>
+                    <h3 class="text-page-accent font-bold text-base">Evaluation</h3>
+                    <span id="feedback-evaluation" class="feedback-badge hidden"></span>
+                  </div>
+                  <p class="text-page-muted text-xs md:text-sm ml-5">Two paragraphs judge different aspects of the film</p>
+                </div>
+                <div class="ml-5 flex flex-col sm:flex-row gap-3">
+                  <div class="flex-1">
+                    <label class="block text-xs text-page-muted font-semibold uppercase tracking-wider mb-1.5">Paragraph 1</label>
+                    <select id="select-eval1" class="custom-select w-full border border-page-border rounded-lg px-3 py-2.5 text-sm text-page-text bg-white min-h-[44px]">
+                      <option value="">-- Select --</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+                    </select>
+                  </div>
+                  <div class="flex-1">
+                    <label class="block text-xs text-page-muted font-semibold uppercase tracking-wider mb-1.5">Paragraph 2</label>
+                    <select id="select-eval2" class="custom-select w-full border border-page-border rounded-lg px-3 py-2.5 text-sm text-page-text bg-white min-h-[44px]">
+                      <option value="">-- Select --</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+                    </select>
+                  </div>
+                </div>
+                <p id="eval-partial-msg" class="text-page-warning text-xs font-semibold ml-5 hidden"></p>
+              </div>
+            </div>
+
+            <!-- 4. Recommendation -->
+            <div id="row-recommendation" class="stage-row px-5 md:px-6 py-5">
+              <div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-baseline gap-2 mb-1">
+                    <span class="text-page-accent font-bold text-sm">4.</span>
+                    <h3 class="text-page-accent font-bold text-base">Recommendation</h3>
+                    <span id="feedback-recommendation" class="feedback-badge hidden"></span>
+                  </div>
+                  <p class="text-page-muted text-xs md:text-sm ml-5">Gives a verdict and says who should watch it</p>
+                </div>
+                <div class="ml-5 md:ml-0 w-full md:w-48 flex-shrink-0">
+                  <select id="select-recommendation" class="custom-select w-full border border-page-border rounded-lg px-3 py-2.5 text-sm text-page-text bg-white min-h-[44px]">
+                    <option value="">-- Select --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <button id="btn-check" class="bg-page-accent hover:bg-page-accentHover text-white font-bold px-7 py-3 rounded-xl transition-colors min-h-[44px] text-base shadow-sm flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-5 h-5"></i>
+          Check Answers
+        </button>
+        <button id="btn-reset" class="bg-white border border-page-border text-page-muted hover:text-page-text hover:border-gray-400 px-7 py-3 rounded-xl transition-colors min-h-[44px] text-base shadow-sm flex items-center gap-2">
+          <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+          Reset
+        </button>
+      </div>
+
+      <!-- Score Banner -->
+      <div id="score-banner" class="hidden score-banner max-w-xl mx-auto"></div>
+
+      <!-- Hint Accordion -->
+      <div class="max-w-xl mx-auto mt-8">
+        <button id="btn-hint" class="w-full text-left flex items-center gap-2 text-page-accent hover:text-page-accentHover transition-colors py-2 min-h-[44px]">
+          <span class="text-lg">💡</span>
+          <span class="text-sm font-medium">Need a hint?</span>
+          <i data-lucide="chevron-down" id="hint-chevron" class="w-4 h-4 ml-auto transition-transform"></i>
+        </button>
+        <div id="hint-content" class="hint-content">
+          <div class="bg-white rounded-xl border border-page-border p-4 space-y-3 text-sm shadow-sm">
+            <div class="flex gap-2">
+              <span class="text-page-accent font-bold shrink-0">Introduction:</span>
+              <span class="text-page-muted">This section names the film, tells us who directed it, and introduces the main character.</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-page-accent font-bold shrink-0">Plot Summary:</span>
+              <span class="text-page-muted">This section explains what the story is about — without giving away the ending.</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-page-accent font-bold shrink-0">Evaluation:</span>
+              <span class="text-page-muted">This section comments on the quality of the film. Look for TWO paragraphs that judge different aspects.</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="text-page-accent font-bold shrink-0">Recommendation:</span>
+              <span class="text-page-muted">This section gives a final verdict and tells us who the film is for.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center border-t border-page-border mt-auto bg-white">
+      <p class="text-xs text-page-muted">TP8 · CELTA Teaching Practice · Writing: Film Reviews</p>
+    </footer>
+
+    <script>
+      if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+
+      const correctAnswers = {
+        introduction: 'A',
+        plot: 'B',
+        eval: new Set(['C', 'D']),
+        recommendation: 'E'
+      };
+
+      const selectIntro = document.getElementById('select-introduction');
+      const selectPlot  = document.getElementById('select-plot');
+      const selectEval1 = document.getElementById('select-eval1');
+      const selectEval2 = document.getElementById('select-eval2');
+      const selectRec   = document.getElementById('select-recommendation');
+
+      const rowIntro = document.getElementById('row-introduction');
+      const rowPlot  = document.getElementById('row-plot');
+      const rowEval  = document.getElementById('row-evaluation');
+      const rowRec   = document.getElementById('row-recommendation');
+
+      const fbIntro = document.getElementById('feedback-introduction');
+      const fbPlot  = document.getElementById('feedback-plot');
+      const fbEval  = document.getElementById('feedback-evaluation');
+      const fbRec   = document.getElementById('feedback-recommendation');
+
+      const evalPartialMsg = document.getElementById('eval-partial-msg');
+      const scoreBanner    = document.getElementById('score-banner');
+
+      function setFeedback(el, type, text) {
+        el.textContent = text;
+        el.className = 'feedback-badge';
+        if (type === 'correct')   el.style.color = '#16a34a';
+        else if (type === 'incorrect') el.style.color = '#dc2626';
+        else if (type === 'partial')   el.style.color = '#d97706';
+        el.classList.remove('hidden');
+      }
+
+      function clearFeedback(el) {
+        el.textContent = '';
+        el.className = 'feedback-badge hidden';
+        el.style.color = '';
+      }
+
+      function checkAnswers() {
+        let sectionsCorrect = 0;
+        evalPartialMsg.classList.add('hidden');
+        evalPartialMsg.textContent = '';
+
+        // Introduction
+        rowIntro.classList.remove('correct','incorrect','partial');
+        clearFeedback(fbIntro);
+        const introVal = selectIntro.value;
+        if (introVal) {
+          if (introVal === correctAnswers.introduction) {
+            sectionsCorrect++;
+            rowIntro.classList.add('correct');
+            setFeedback(fbIntro, 'correct', '✅ Correct');
+            selectIntro.disabled = true;
+          } else {
+            rowIntro.classList.add('incorrect');
+            setFeedback(fbIntro, 'incorrect', '❌ Try again');
+          }
+        }
+
+        // Plot Summary
+        rowPlot.classList.remove('correct','incorrect','partial');
+        clearFeedback(fbPlot);
+        const plotVal = selectPlot.value;
+        if (plotVal) {
+          if (plotVal === correctAnswers.plot) {
+            sectionsCorrect++;
+            rowPlot.classList.add('correct');
+            setFeedback(fbPlot, 'correct', '✅ Correct');
+            selectPlot.disabled = true;
+          } else {
+            rowPlot.classList.add('incorrect');
+            setFeedback(fbPlot, 'incorrect', '❌ Try again');
+          }
+        }
+
+        // Evaluation
+        rowEval.classList.remove('correct','incorrect','partial');
+        clearFeedback(fbEval);
+        const ev1 = selectEval1.value;
+        const ev2 = selectEval2.value;
+        const placed = [ev1, ev2].filter(Boolean);
+        const correctCount = placed.filter(id => correctAnswers.eval.has(id)).length;
+
+        if (placed.length === 2 && correctCount === 2) {
+          sectionsCorrect++;
+          rowEval.classList.add('correct');
+          setFeedback(fbEval, 'correct', '✅ Correct');
+          selectEval1.disabled = true;
+          selectEval2.disabled = true;
+        } else if (placed.length > 0) {
+          if (correctCount === 1 && placed.length === 1) {
+            rowEval.classList.add('partial');
+            setFeedback(fbEval, 'partial', '⚠️ Almost');
+            evalPartialMsg.textContent = 'One more paragraph needed!';
+            evalPartialMsg.classList.remove('hidden');
+          } else if (correctCount === 1 && placed.length === 2) {
+            rowEval.classList.add('partial');
+            setFeedback(fbEval, 'partial', '⚠️ One correct, one wrong');
+            evalPartialMsg.textContent = 'Check your second choice!';
+            evalPartialMsg.classList.remove('hidden');
+          } else {
+            rowEval.classList.add('incorrect');
+            setFeedback(fbEval, 'incorrect', '❌ Try again');
+          }
+        }
+
+        // Recommendation
+        rowRec.classList.remove('correct','incorrect','partial');
+        clearFeedback(fbRec);
+        const recVal = selectRec.value;
+        if (recVal) {
+          if (recVal === correctAnswers.recommendation) {
+            sectionsCorrect++;
+            rowRec.classList.add('correct');
+            setFeedback(fbRec, 'correct', '✅ Correct');
+            selectRec.disabled = true;
+          } else {
+            rowRec.classList.add('incorrect');
+            setFeedback(fbRec, 'incorrect', '❌ Try again');
+          }
+        }
+
+        // Score Banner
+        scoreBanner.classList.remove('hidden');
+        const totalPlaced = (introVal?1:0) + (plotVal?1:0) + placed.length + (recVal?1:0);
+
+        if (sectionsCorrect === 4) {
+          scoreBanner.style.cssText = 'background:rgba(22,163,74,0.08);color:#16a34a;border:1px solid rgba(22,163,74,0.25)';
+          scoreBanner.textContent = '🎉 Perfect! Well done! All 4 sections correct!';
+        } else if (totalPlaced === 0) {
+          scoreBanner.style.cssText = 'background:rgba(212,130,10,0.08);color:#d4820a;border:1px solid rgba(212,130,10,0.25)';
+          scoreBanner.textContent = 'Select a paragraph for each stage first!';
+        } else {
+          scoreBanner.style.cssText = 'background:rgba(212,130,10,0.08);color:#d4820a;border:1px solid rgba(212,130,10,0.25)';
+          scoreBanner.textContent = `You got ${sectionsCorrect} out of 4 correct! Keep trying — you can still change the wrong ones.`;
+        }
+      }
+
+      function resetAll() {
+        [selectIntro, selectPlot, selectEval1, selectEval2, selectRec].forEach(s => {
+          s.value = '';
+          s.disabled = false;
+        });
+        [rowIntro, rowPlot, rowEval, rowRec].forEach(r =>
+          r.classList.remove('correct','incorrect','partial')
+        );
+        [fbIntro, fbPlot, fbEval, fbRec].forEach(fb => clearFeedback(fb));
+        evalPartialMsg.classList.add('hidden');
+        evalPartialMsg.textContent = '';
+        scoreBanner.classList.add('hidden');
+      }
+
+      let hintOpen = false;
+      document.getElementById('btn-hint').addEventListener('click', () => {
+        hintOpen = !hintOpen;
+        document.getElementById('hint-content').classList.toggle('open', hintOpen);
+        const ch = document.getElementById('hint-chevron');
+        if (ch) ch.style.transform = hintOpen ? 'rotate(180deg)' : 'rotate(0deg)';
       });
-    }
-  </script>
-</body>
+
+      document.getElementById('btn-check').addEventListener('click', checkAnswers);
+      document.getElementById('btn-reset').addEventListener('click', resetAll);
+    </script>
+  </body>
 </html>
