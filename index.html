@@ -154,41 +154,41 @@
           </div>
           <div class="divide-y divide-page-border">
 
-            <!-- D -->
+            <!-- A (acting/sister paragraph) -->
             <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
-              <span class="letter-badge mt-0.5">D</span>
+              <span class="letter-badge mt-0.5">A</span>
               <p class="text-page-text text-sm md:text-base leading-relaxed">
                 The acting is strong, especially in the scenes between Erik and his sister. However, some moments feel a little slow, and viewers who prefer fast stories might lose interest.
               </p>
             </div>
 
-            <!-- A -->
+            <!-- B (intro paragraph) -->
             <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
-              <span class="letter-badge mt-0.5">A</span>
+              <span class="letter-badge mt-0.5">B</span>
               <p class="text-page-text text-sm md:text-base leading-relaxed">
                 "The Silent Runner" is a quiet drama directed by a new Norwegian filmmaker. This film is about Erik, a retired long-distance runner who returns to his childhood village after many years away.
               </p>
             </div>
 
-            <!-- E -->
+            <!-- C (recommendation paragraph) -->
             <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
-              <span class="letter-badge mt-0.5">E</span>
+              <span class="letter-badge mt-0.5">C</span>
               <p class="text-page-text text-sm md:text-base leading-relaxed">
                 I would recommend this film to anyone who enjoys quiet, emotional stories and beautiful natural scenery. It is a gentle film that stays in your mind after you finish watching it.
               </p>
             </div>
 
-            <!-- B -->
+            <!-- D (plot summary paragraph) -->
             <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
-              <span class="letter-badge mt-0.5">B</span>
+              <span class="letter-badge mt-0.5">D</span>
               <p class="text-page-text text-sm md:text-base leading-relaxed">
                 The story follows Erik as he reconnects with his mother, his sister, and a young neighbor. There are no big twists or action scenes — the film focuses on family problems, old memories, and slow emotional change.
               </p>
             </div>
 
-            <!-- C -->
+            <!-- E (landscape/music paragraph) -->
             <div class="para-item px-5 md:px-6 py-4 flex gap-4 items-start">
-              <span class="letter-badge mt-0.5">C</span>
+              <span class="letter-badge mt-0.5">E</span>
               <p class="text-page-text text-sm md:text-base leading-relaxed">
                 I think the film uses the natural landscape very well. The snowy mountains and frozen lakes help show Erik's feelings, and the simple music fits the calm, thoughtful style of the film.
               </p>
@@ -256,7 +256,7 @@
               </div>
             </div>
 
-            <!-- 3. Evaluation (two dropdowns) -->
+            <!-- 3. Evaluation (TWO dropdowns) -->
             <div id="row-evaluation" class="stage-row px-5 md:px-6 py-5">
               <div class="flex flex-col gap-3">
                 <div>
@@ -378,11 +378,12 @@
         lucide.createIcons();
       }
 
+      // A = acting, B = intro, C = recommendation, D = plot, E = landscape
       const correctAnswers = {
-        introduction: 'A',
-        plot: 'B',
-        eval: new Set(['C', 'D']),
-        recommendation: 'E'
+        introduction:   'B',
+        plot:           'D',
+        eval:           new Set(['A', 'E']),
+        recommendation: 'C'
       };
 
       const selectIntro = document.getElementById('select-introduction');
@@ -505,12 +506,10 @@
 
         // Score Banner
         scoreBanner.classList.remove('hidden');
-        const totalPlaced = (introVal?1:0) + (plotVal?1:0) + placed.length + (recVal?1:0);
-
         if (sectionsCorrect === 4) {
           scoreBanner.style.cssText = 'background:rgba(22,163,74,0.08);color:#16a34a;border:1px solid rgba(22,163,74,0.25)';
           scoreBanner.textContent = '🎉 Perfect! Well done! All 4 sections correct!';
-        } else if (totalPlaced === 0) {
+        } else if (!introVal && !plotVal && placed.length === 0 && !recVal) {
           scoreBanner.style.cssText = 'background:rgba(212,130,10,0.08);color:#d4820a;border:1px solid rgba(212,130,10,0.25)';
           scoreBanner.textContent = 'Select a paragraph for each stage first!';
         } else {
